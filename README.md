@@ -2,7 +2,7 @@
 
 FleetRemote is a wrapper around the `fleetctl` command-line tool that simplifies interactions with remote hosts managed by Fleet. It allows users to run commands interactively on a specified host, similar to how SSH works, but through Fleet. This tool enhances the ease of interacting with hosts remotely.
 
-FleetRemote works on macOS and Linux platforms. **Windows is not supported**.
+FleetRemote runs on macOS and Linux platforms. **Windows is not supported**.
 
 ## Features
 - **Interactive Command Execution**: Run commands interactively on remote hosts via Fleet.
