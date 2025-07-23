@@ -23,7 +23,7 @@ FleetRemote relies on `fleetctl`, the official command-line tool for interacting
    Ensure that `fleetctl` is configured with your Fleet server URL and API token. This allows the tool to authenticate and communicate with the Fleet server.
 
    Example configuration:
-   ```bash
+   ```
    fleetctl config set --address https://your-fleet-server-url
    fleetctl config set --token YOUR_API_TOKEN
    ```
@@ -32,7 +32,7 @@ FleetRemote relies on `fleetctl`, the official command-line tool for interacting
 
 3. **Verify Fleetctl Installation**:
    After configuring `fleetctl`, verify the installation by running:
-   ```bash
+   ```
    fleetctl get hosts
    ```
    This command should return the list of hosts registered with your Fleet server. If it doesn't, revisit the configuration steps.
@@ -48,7 +48,7 @@ You can install FleetRemote to `/usr/local/bin/` to make it available globally o
 
 1. **Install FleetRemote**:
    Run the following command to install the script:
-   ```bash
+   ```
    sudo ./fleetremote.sh install
    ```
 
@@ -58,14 +58,14 @@ You can install FleetRemote to `/usr/local/bin/` to make it available globally o
 
 2. **Run FleetRemote**:
    After installation, you can run FleetRemote from anywhere on your system:
-   ```bash
+   ```
    fleetremote
    ```
 
 ### 2. Uninstallation
 
 To remove FleetRemote from your system, run:
-```bash
+```
 sudo ./fleetremote.sh uninstall
 ```
 This will delete fleetremote from `/usr/local/bin/`.
@@ -73,7 +73,7 @@ This will delete fleetremote from `/usr/local/bin/`.
 ### 3. Portable Usage
 
 If you prefer not to install FleetRemote globally, you can use it portably by running the script directly without installation:
-```bash
+```
 ./fleetremote.sh
 ```
 This method allows you to use FleetRemote from its current directory without modifying system paths.
@@ -86,11 +86,11 @@ Once FleetRemote is installed or used portably, it provides an interactive inter
 
 You can launch FleetRemote by running the following command (either globally or portably, depending on how you installed it):
 
-```bash
+```
 fleetremote
 ```
 or
-```bash
+```
 ./fleetremote.sh
 ```
 
@@ -98,7 +98,7 @@ or
 
 FleetRemote allows you to connect to a host using its **Serial Number**, **UUID**, or **Display Name**. When prompted, enter one of these identifiers:
 
-```bash
+```
 Enter the target host identifier (Serial, UUID, or Display Name): <your-identifier>
 ```
 
@@ -108,7 +108,7 @@ FleetRemote will automatically resolve the identifier to a UUID using the Fleet 
 
 Once the connection is established, you can run commands interactively on the host. For example:
 
-```bash
+```
 fleetctl@<host-identifier>> hostname
 HOSTNAME: <your-host-name>
 ```
@@ -119,7 +119,7 @@ You can continue running commands on the host in this interactive session.
 
 To end your session, type `quit` or `exit`:
 
-```bash
+```
 fleetctl@<host-identifier>> quit
 ```
 
@@ -129,7 +129,7 @@ This will close the connection to the host and end the interactive session.
 
 Here’s an example of how you might use FleetRemote to connect to a host and run commands:
 
-```bash
+```
 $ fleetremote
 Running FleetRemote version: 1.0.0
 Connected to Fleet server at: https://your-fleet-server-url
@@ -154,21 +154,21 @@ Finished running commands on ABC123456789.
 FleetRemote will notify you of any issues during the session:
 
 - **Invalid Identifier**: If the provided identifier cannot be resolved, you will see an error message:
-  ```bash
+  ```
   ERROR: Could not resolve UUID for <identifier>. Exiting.
   ```
 
 - **Host Offline**: If the target host is not online, you will be notified:
-  ```bash
+  ```
   ERROR: Target host <identifier> is not currently online. Exiting.
   ```
 
 - **fleetctl Not Installed**: If `fleetctl` is not installed or improperly configured, FleetRemote will exit with one of the following errors:
-  ```bash
+  ```
   ERROR: fleetctl is not installed. Please install it from https://github.com/fleetdm/fleet/releases
   ```
   or
-    ```bash
+    ```
   ERROR: `fleetctl get config` cmd failure. Exiting.
   ```
 
